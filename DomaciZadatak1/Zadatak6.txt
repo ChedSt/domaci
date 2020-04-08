@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Zadatak6 {
+
+	public static void main(String[] args) {
+		int n, m, suma = 0;
+		Scanner scan = new Scanner(System.in);
+		do {
+			m = scan.nextInt();
+			n = scan.nextInt();
+		} while (!(n > m));
+		for (int i = m; i <= n; i++) {
+			suma += i % 2 == 0 ? (int) Math.pow(i, 2) : (int) Math.pow(i, 3);
+		}
+		System.out.println("Suma = " + suma);
+		scan.close();
+	}
+
+}

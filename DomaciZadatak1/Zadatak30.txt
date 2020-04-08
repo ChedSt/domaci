@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Zadatak30 {
+
+	public static void ispis(int[][] mat) {
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				System.out.print(mat[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+		int n, m, min = 0, max = 0;
+		int mini = 0, minj = 0, maxi = 0, maxj = 0; 
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		m = scan.nextInt();
+		int[][] mat = new int[n][m];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				mat[i][j] = scan.nextInt();
+				if (i == 0 && j == 0) {
+					min = mat[0][0];
+					max = mat[0][0];
+				}
+				if (min > mat[i][j]) {
+					min = mat[i][j];
+					mini = i;
+					minj = j;
+				}
+				if (max < mat[i][j]) {
+					max = mat[i][j];
+					maxi = i;
+					maxj = j;
+				}
+			}
+		}
+		ispis(mat);
+		int tmp = mat[mini][minj];
+		mat[mini][minj] = mat[maxi][maxj];
+		mat[maxi][maxj] = tmp;
+		System.out.println();
+		ispis(mat);
+		scan.close();
+	}
+}

@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Zadatak24 {
+
+	public static void sort(int[] n, int brojN, int brojP) {
+		int in = 0, ip = 0;
+		int[] ne = new int[brojN];
+		int[] pa = new int[brojP];
+		for (int i = 0; i < n.length; i++) {
+			if (n[i] % 2 == 0) {
+				pa[ip++] = n[i];
+			} else {
+				ne[in++] = n[i];
+			}
+		}
+		for (int i = 0; i < pa.length - 1; i++) {
+			for (int j = i + 1; j < pa.length; j++) {
+				if (pa[i] > pa[j]) {
+					int tmp = pa[i];
+					pa[i] = pa[j];
+					pa[j] = tmp;
+				}
+			}
+		}
+		for (int i = 0; i < ne.length - 1; i++) {
+			for (int j = i + 1; j < ne.length; j++) {
+				if (ne[i] < ne[j]) {
+					int tmp = ne[i];
+					ne[i] = ne[j];
+					ne[j] = tmp;
+				}
+			}
+		}
+		in = ip = 0;
+		for (int i = 0; i < n.length; i++) {
+			if (i < pa.length) {
+				n[i] = pa[ip++];
+			} else {
+				n[i] = ne[in++];
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int m, brojN = 0, brojP = 0;
+		Scanner scan = new Scanner(System.in);
+		m = scan.nextInt();
+		int[] n = new int[m];
+		for (int i = 0; i < n.length; i++) {
+			if ((n[i] = scan.nextInt()) % 2 == 0) {
+				brojP++;
+			} else {
+				brojN++;
+			}
+		}
+		sort(n, brojN, brojP);
+		for (int i = 0; i < n.length; i++) {
+			System.out.print(n[i] + "\t");
+		}
+		scan.close();
+	}
+
+}

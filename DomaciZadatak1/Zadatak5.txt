@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Zadatak5 {
+
+	public static void main(String[] args) {
+		int x, n, p = 1;
+		Scanner scan = new Scanner(System.in);
+		x = scan.nextInt();
+		n = scan.nextInt();
+		while (n != 0) {
+			p *= x;
+			n--;
+		}
+		System.out.println(p);
+		scan.close();
+	}
+	
+}

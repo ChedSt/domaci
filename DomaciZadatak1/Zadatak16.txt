@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Zadatak16 {
+
+	public static void ispis(int[] a, int n) {
+		for (int i = 0; i < n; i++) {
+			System.out.print(a[i] + "\t");
+		}
+	}
+	
+	public static void main(String[] args) {
+		int n, p, bi = 0, ci = 0;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		p = scan.nextInt();
+		int[] a = new int[n];
+		for (int i = 0; i < n; i++) {
+			if((a[i] = scan.nextInt()) < p) {
+				bi++;
+			} else if (a[i] > p) {
+				ci++;
+			}
+		}
+		int[] b = new int[bi];
+		int[] c = new int[ci];
+		bi = ci = 0;
+		for (int i = 0; i < n; i++) {
+			if(a[i] < p) {
+				b[bi++] = a[i];
+			} else if (a[i] > p) {
+				c[ci++] = a[i];
+			}
+		}
+		ispis(a, n);
+		System.out.println();
+		ispis(b, bi);
+		System.out.println();
+		ispis(c, ci);
+		scan.close();
+	}
+	
+}

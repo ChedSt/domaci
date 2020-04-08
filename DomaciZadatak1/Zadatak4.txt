@@ -1,0 +1,21 @@
+
+public class Zadatak4 {
+
+	public static boolean isArmstrong(int n) {
+		int suma = 0, tmp = n;
+		while (n != 0) {
+			suma += Math.pow(n % 10, 3);
+			n /= 10;
+		}
+		return (suma == tmp) ? true : false;
+	}
+	
+	public static void main(String[] args) {
+		for (int i = 100; i <= 999; i++) {
+			if (isArmstrong(i)) {
+				System.out.println(i);
+			}
+		}
+	}
+
+}

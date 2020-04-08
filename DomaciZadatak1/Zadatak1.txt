@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Zadatak1 {
+	public static void main(String[] args) {
+		int suma = 0, tmp;
+		Scanner scan = new Scanner(System.in);
+		while ((tmp = scan.nextInt()) != 0) {
+			suma += tmp;
+		}
+		System.out.println("Suma = " + suma);
+		scan.close();
+	}
+	
+}

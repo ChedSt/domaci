@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Zadatak21 {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		int[] a = new int[n];
+		for (int i = 0; i < a.length; i++) {
+			a[i] = scan.nextInt();
+		}
+		int min, max, indeks;
+		if (a[0] > a[1]) {
+			min = a[1];
+			max = a[0];
+			indeks = 1;
+		} else {
+			min = a[0];
+			max = a[1];
+			indeks = 0;
+		}
+		for (int i = 1; i < a.length; i++) {
+			if (min < a[i] && min < max) {
+				min = a[i];
+				indeks = i;
+			}
+			if (max < a[i]) {
+				max = a[i];
+			}
+		}
+		System.out.println("Indeks drugog po redu = " + indeks);
+		scan.close();
+	}
+	
+}

@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Zadatak9 {
+
+	public static void main(String[] args) {
+		int x, c;
+		Scanner scan = new Scanner(System.in);
+		x = scan.nextInt();
+		c = scan.nextInt();
+		do {
+			if (x % 10 == c) {
+				System.out.println("Postoji cifra " + c);
+				break;
+			}
+			x /= 10;
+		} while (x != 0);
+		if (x == 0) {
+			System.out.println("Ne postoji cifra " + c);
+		}
+		scan.close();
+	}
+	
+}

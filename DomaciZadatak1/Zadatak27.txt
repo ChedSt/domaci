@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Zadatak27 {
+
+	public static void main(String[] args) {
+		int n, m, min = 0, max = 0;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		m = scan.nextInt();
+		int[][] mat = new int[n][m];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				mat[i][j] = scan.nextInt();
+				if (i == 0 && j == 0) {
+					min = mat[0][0];
+					max = mat[0][0];
+				}
+				if (min > mat[i][j]) {
+					min = mat[i][j];
+				}
+				if (max < mat[i][j]) {
+					max = mat[i][j];
+				}
+			}
+		}
+		System.out.println("Najmanji = " + min);
+		System.out.println("Najveci = " + max);
+		scan.close();
+	}
+	
+}

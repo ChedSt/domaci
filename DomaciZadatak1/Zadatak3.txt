@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Zadatak3 {
+
+	public static void main(String[] args) {
+		int m, n;
+		Scanner scan = new Scanner(System.in);
+		m = scan.nextInt();
+		n = scan.nextInt();
+		System.out.println(
+				"Resenje = " + ((n + (int) Math.pow(m, 2)) * (2 * (int) Math.pow(n, 3) + 3 * (int) Math.pow(m, 4))));
+		scan.close();
+	}
+
+}

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Zadatak14 {
+
+	public static void main(String[] args) {
+		int x, n;
+		Scanner scan = new Scanner(System.in);
+		x = scan.nextInt();
+		n = scan.nextInt();
+		while (true) {
+			if (x % n == 0) {
+				break;
+			} else {
+				x++;
+			}
+		}
+		System.out.println("Broj koji je deljiv brojem " + n + " je " + x);
+		scan.close();
+	}
+	
+}

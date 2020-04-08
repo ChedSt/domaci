@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Zadatak17 {
+
+	public static int[] resize(int[] n, int a, int b) {
+		int j = 0;
+		int[] arr = new int[n.length - b + a + 1];
+		for (int i = 0; i < n.length; i++) {
+			if (i <= a || i >= b) {
+				arr[j++] = n[i];
+			}
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		int j, a, b, indOfA = 0, indOfB = 0;
+		Scanner scan = new Scanner(System.in);
+		j = scan.nextInt();
+		a = scan.nextInt();
+		b = scan.nextInt();
+		int[] n = new int[j];
+		for (int i = 0; i < j; i++) {
+			n[i] = scan.nextInt();
+			if (n[i] == a) {
+				indOfA = i;
+			}
+			if (n[i] == b) {
+				indOfB = i;
+			}
+		}
+		int[] arr = resize(n, indOfA, indOfB);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + "\t");
+		}
+		scan.close();
+	}
+	
+}

@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Zadatak13 {
+
+	public static void main(String[] args) {
+		int i = 2;
+		double x, broj = 1;
+		Scanner scan = new Scanner(System.in);
+		x = scan.nextDouble();
+		while (x > broj) {
+			broj += ((double)1/i);
+			i++;
+		}
+		System.out.println("Prvi broj veci od " + x + " je " + broj);
+		scan.close();
+	}
+	
+}

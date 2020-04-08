@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Zadatak26 {
+
+	public static void main(String[] args) {
+		int n, parni = 0, neparni = 0, pozitivni = 0, negativni = 0;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		int[] arr = new int[n];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = scan.nextInt();
+			if (arr[i] % 2 == 0) {
+				parni++;
+			} else {
+				neparni++;
+			}
+			if (arr[i] < 0) {
+				negativni++;
+			} else {
+				pozitivni++;
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + "\t");
+		}
+		System.out.println("\nParnih = " + parni);
+		System.out.println("Neparnih = " + neparni);
+		System.out.println("Pozitivnih = " + pozitivni);
+		System.out.println("Negativnih = " + negativni);
+		scan.close();
+	}
+
+}

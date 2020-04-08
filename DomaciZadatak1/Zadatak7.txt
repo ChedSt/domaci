@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Zadatak7 {
+
+	public static void main(String[] args) {
+		double arSredina = 0;
+		Scanner scan = new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			arSredina += scan.nextInt();
+		}
+		System.out.println("Aritmeticka sredina = " + arSredina/5);
+		scan.close();
+	}
+
+}

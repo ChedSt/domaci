@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Zadatak31 {
+
+	public static void main(String[] args) {
+		int n, tmp = 0;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextInt();
+		for (int i = 1; i <= n; i++) {
+			tmp = tmp * 10 + i;
+			System.out.println(tmp);
+		}
+		scan.close();
+	}
+	
+}

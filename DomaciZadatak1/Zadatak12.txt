@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Zadatak12 {
+
+	public static void main(String[] args) {
+		int x, suma = 0;
+		Scanner scan = new Scanner(System.in);
+		x = scan.nextInt();
+		while (x != 0) {
+			suma += x % 10;
+			x /= 10;
+		}
+		System.out.println("Suma = " + suma);
+		scan.close();
+	}
+	
+}

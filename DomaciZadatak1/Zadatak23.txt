@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Zadatak23 {
+
+	public static void main(String[] args) {
+		double n, m;
+		Scanner scan = new Scanner(System.in);
+		n = scan.nextDouble();
+		m = scan.nextDouble();
+		switch(scan.nextInt()) {
+		case 1:
+			System.out.println(n + m);
+			break;
+		case 2:
+			System.out.println(n - m);
+			break;
+		case 3:
+			System.out.println(n * m);
+			break;
+		case 4:
+			System.out.println(n / m);
+			break;
+		default:
+			System.out.println("Greska");
+		}
+		scan.close();
+	}
+	
+}
