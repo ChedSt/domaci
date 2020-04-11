@@ -1,0 +1,17 @@
+package zadatak20;
+
+public class CedomirStanivukovic {
+	private String a;
+	
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String stringB() {
+		return a.substring(a.lastIndexOf(" ") + 1);
+	}
+}

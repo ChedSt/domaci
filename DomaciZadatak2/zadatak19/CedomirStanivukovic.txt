@@ -1,0 +1,30 @@
+package zadatak19;
+
+public class CedomirStanivukovic {
+	private int n;
+	private String a;
+	
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String stringB() {
+		char[] arr = new char[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = a.charAt(a.length() - n + i);
+		}
+		return new String(arr);
+	}
+}

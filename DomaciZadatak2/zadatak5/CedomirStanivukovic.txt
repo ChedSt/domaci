@@ -1,0 +1,38 @@
+package zadatak5;
+
+public class CedomirStanivukovic {
+	private String A;
+	private String B;
+	private String C;
+
+	public String getA() {
+		return A;
+	}
+
+	public void setA(String a) {
+		A = a;
+	}
+
+	public String getB() {
+		return B;
+	}
+
+	public void setB(String b) {
+		B = b;
+	}
+
+	public String getC() {
+		return C;
+	}
+
+	public void setC(String c) {
+		C = c;
+	}
+
+	public String zameni() {
+		if (A.indexOf(B) == -1) {
+			return "Podstring B se ne nalazi u stringu A";
+		}
+		return A.substring(0, A.indexOf(B)) + C + A.substring(A.indexOf(B) + B.length());
+	}
+}

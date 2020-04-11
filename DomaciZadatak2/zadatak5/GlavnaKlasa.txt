@@ -1,0 +1,17 @@
+package zadatak5;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setA(scan.nextLine());
+		cs.setB(scan.nextLine());
+		cs.setC(scan.nextLine());
+		System.out.println(cs.zameni());
+		scan.close();
+	}
+
+}

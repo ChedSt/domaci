@@ -1,0 +1,31 @@
+package zadatak2;
+
+public class CedomirStanivukovic {
+	private String prvi;
+	private String drugi;
+	
+	public String getPrvi() {
+		return prvi;
+	}
+	public void setPrvi(String prvi) {
+		this.prvi = prvi;
+	}
+	public String getDrugi() {
+		return drugi;
+	}
+	public void setDrugi(String drugi) {
+		this.drugi = drugi;
+	}
+	
+	public int duzinaPrvi() {
+		return prvi.length();
+	}
+	
+	public int duzinaDrugi() {
+		return drugi.length();
+	}
+	
+	public void jedanString() {
+		System.out.println(prvi.concat(drugi));
+	}
+}

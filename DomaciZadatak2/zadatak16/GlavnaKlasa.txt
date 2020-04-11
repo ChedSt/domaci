@@ -1,0 +1,16 @@
+package zadatak16;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setA(scan.nextLine());
+		System.out.println("Najduza rec = " + cs.najduza());
+		System.out.println();
+		scan.close();
+	}
+
+}

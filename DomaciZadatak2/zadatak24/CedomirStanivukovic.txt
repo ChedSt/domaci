@@ -1,0 +1,19 @@
+package zadatak24;
+
+public class CedomirStanivukovic {
+	private String a;
+	
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public void ispis() {
+		for (int i = 0; i < a.length(); i++) {
+			System.out.println(a.charAt(i));
+		}
+	}
+}

@@ -1,0 +1,26 @@
+package zadatak21;
+
+public class CedomirStanivukovic {
+	private int n;
+	private String a;
+	
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String stringB() {
+		return a.substring(0, n);
+	}
+}

@@ -1,0 +1,15 @@
+package zadatak3;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setRecenica(scan.nextLine());
+		System.out.println(cs.palindrom() ? "Jeste palindrom" : "Nije palindrom");
+		scan.close();
+	}
+
+}

@@ -1,0 +1,18 @@
+package zadatak2;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setPrvi(scan.nextLine());
+		cs.setDrugi(scan.nextLine());
+		System.out.println("Duzina prvog = " + cs.duzinaPrvi());
+		System.out.println("Duzina drugog = " + cs.duzinaDrugi());
+		cs.jedanString();
+		scan.close();
+	}
+
+}

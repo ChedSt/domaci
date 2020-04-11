@@ -1,0 +1,26 @@
+package zadatak14;
+
+public class CedomirStanivukovic {
+	private String a;
+
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String stringB() {
+		StringBuilder stringBuilder = new StringBuilder(a);
+		while (stringBuilder.indexOf("!") != -1) {
+			int index = stringBuilder.indexOf("!");
+			stringBuilder.replace(index, index + 1, ", vicemo.");
+		}
+		while (stringBuilder.indexOf("?") != -1) {
+			int index = stringBuilder.indexOf("?");
+			stringBuilder.replace(index, index + 1, ", pitamo se.");
+		}
+		return stringBuilder.toString();
+	}
+}

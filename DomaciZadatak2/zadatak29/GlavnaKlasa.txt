@@ -1,0 +1,16 @@
+package zadatak29;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setA(scan.nextLine());
+		cs.ispis();
+		System.out.println();
+		scan.close();
+	}
+
+}

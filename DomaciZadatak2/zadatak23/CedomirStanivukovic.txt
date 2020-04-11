@@ -1,0 +1,22 @@
+package zadatak23;
+
+public class CedomirStanivukovic {
+	private String a;
+	
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public void ispis() {
+		for (int i = 1; i <= 9; i++) {
+			System.out.print(a.toUpperCase() + " ");
+			if (i % 3 == 0) {
+				System.out.print("\n");
+			}
+		}
+	}
+}

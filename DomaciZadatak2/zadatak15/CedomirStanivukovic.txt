@@ -1,0 +1,36 @@
+package zadatak15;
+
+public class CedomirStanivukovic {
+	private String a;
+
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String stringB() {
+		String B = ""; 
+		for (char ch : a.toCharArray()) {
+			switch (ch) {
+			case 'a' :
+				B += 'i';
+				break;
+			case 'A' :
+				B += 'I';
+				break;
+			case 'i' :
+				B += 'a';
+				break;
+			case 'I' :
+				B += 'A';
+				break;
+			default:	
+				B += ch;
+			}
+		}
+		return B;
+	}
+}

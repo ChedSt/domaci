@@ -1,0 +1,16 @@
+package zadatak1;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setPrvi(scan.nextLine());
+		cs.setDrugi(scan.nextLine());
+		System.out.println(cs.isti() ? "Isti su" : "Nisu isti");
+		scan.close();
+	}
+
+}

@@ -1,0 +1,25 @@
+package zadatak3;
+
+public class CedomirStanivukovic {
+	private String recenica;
+
+	public String getRecenica() {
+		return recenica;
+	}
+
+	public void setRecenica(String recenica) {
+		this.recenica = recenica;
+	}
+
+	public boolean palindrom() {
+		String tmp = recenica.replaceAll("\\s", "");
+		for (int i = 0; i < recenica.length(); i++) {
+			char prvi = Character.toLowerCase(tmp.charAt(i));
+			char drugi = Character.toLowerCase(tmp.charAt(tmp.length() - i - 1));
+			if (prvi != drugi) {
+				return false;
+			}
+		}
+		return true;
+	}
+}

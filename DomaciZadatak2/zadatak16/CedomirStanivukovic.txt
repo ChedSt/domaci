@@ -1,0 +1,24 @@
+package zadatak16;
+
+public class CedomirStanivukovic {
+	private String a;
+
+	public String getA() {
+		return a;
+	}
+
+	public void setA(String a) {
+		this.a = a;
+	}
+
+	public String najduza() {
+		String[] arr = a.split(" ");
+		String najduza = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (najduza.length() < arr[i].length()) {
+				najduza = arr[i];
+			}
+		}
+		return najduza;
+	}
+}

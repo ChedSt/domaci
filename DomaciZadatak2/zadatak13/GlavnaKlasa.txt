@@ -1,0 +1,16 @@
+package zadatak13;
+
+import java.util.Scanner;
+
+public class GlavnaKlasa {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		CedomirStanivukovic cs = new CedomirStanivukovic();
+		cs.setS1(scan.nextLine());
+		System.out.println("Sifriran tekst = " + cs.sifriranje());
+		System.out.println();
+		scan.close();
+	}
+
+}

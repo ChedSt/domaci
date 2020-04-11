@@ -1,0 +1,15 @@
+package zadatak4;
+
+public class CedomirStanivukovic {
+	private String recenica;
+
+	public String getRecenica() {
+		return recenica.substring(0, 1).toUpperCase() + recenica.substring(1, 2).toUpperCase()
+				+ recenica.substring(2, recenica.length() - 1).toLowerCase();
+	}
+
+	public void setRecenica(String recenica) {
+		this.recenica = recenica;
+	}
+	
+}
