@@ -1,0 +1,18 @@
+package zadatak9;
+
+public class TestGeometrijskihTela {
+
+	public static void main(String[] args) {
+		Kocka kocka = new Kocka();
+		kocka.setDuzinaStranice(25.5);
+		Kvadar kvadar = new Kvadar();
+		kvadar.setDuzina(20);
+		kvadar.setSirina(10);
+		kvadar.setVisina(30);
+		System.out.println("Povrsina kocke: " + kocka.getPovrsina());
+		System.out.println("Zapremina kocke: " + kocka.getZapremina());
+		System.out.println("Povrsina kvadra: " + kvadar.getPovrsina());
+		System.out.println("Zapremina kvadra: " + kvadar.getZapremina());
+	}
+
+}

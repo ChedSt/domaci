@@ -1,0 +1,28 @@
+package zadatak14;
+
+public class AutomatNovca implements AutomatNovcaInterfejs{
+	private double stanje = 5000.0;
+	
+	@Override
+	public void uloziNovac(double iznos) {
+		if (iznos > 0) {
+			stanje += iznos;
+		} else {
+			System.out.println("Greska: Iznos nije veci od 0");
+		}
+		
+	}
+
+	@Override
+	public void podigniNovac(double iznos) {
+		if (iznos > 0 && iznos <= stanje) {
+			stanje -= iznos;
+		} else {
+			System.out.println("Greska: Iznos nije veci od 0 ili nema dovoljno sredstava na stanju");
+		}		
+	}
+	
+	public void ispisi() {
+		System.out.println("Trenutna kolicina novca na stanju: " + stanje);
+	}
+}

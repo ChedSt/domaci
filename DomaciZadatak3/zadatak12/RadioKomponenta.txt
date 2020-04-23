@@ -1,0 +1,5 @@
+package zadatak12;
+
+public interface RadioKomponenta {
+	public void promeniStanicu(double frekvencija);
+}

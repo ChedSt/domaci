@@ -1,0 +1,27 @@
+package zadatak13;
+
+public class Prodavnica implements SluzbaNabavke, SluzbaProdaje{
+	public int brojProizvoda = 0;
+	
+	@Override
+	public void prodajRobu(int brojKomada) {
+		if (brojKomada > 0 && brojKomada <= brojProizvoda) {
+			brojProizvoda -= brojKomada;
+		} else {
+			System.out.println("Greska: Broj komada nije veci od 0 ili nema dovoljno proizvoda");
+		}
+	}
+
+	@Override
+	public void dodajRobu(int brojKomada) {
+		if (brojKomada > 0) {
+			brojProizvoda += brojKomada;
+		} else {
+			System.out.println("Greska: Broj komada nije veci od 0");
+		}
+	}
+
+	public void ispisi() {
+		System.out.println("Broj komada na stanju: " + brojProizvoda);
+	}
+}

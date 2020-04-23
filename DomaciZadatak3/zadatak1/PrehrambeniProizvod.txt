@@ -1,0 +1,34 @@
+package zadatak1;
+
+public class PrehrambeniProizvod extends Proizvod{
+	private String rokTrajanja;
+
+	public PrehrambeniProizvod() {
+		super();
+		this.rokTrajanja = "12.12.2007.";
+	}
+
+	public PrehrambeniProizvod(String naziv, double cena, String rokTrajanja) {
+		super(naziv, cena);
+		if (naziv != null && cena > 0 && rokTrajanja != null) {
+			this.rokTrajanja = rokTrajanja;
+		} else {
+			System.out.println("Greska: Naziv je null ili cena nije veca od 0");
+			this.rokTrajanja = "12.12.2007";
+		}
+	}
+
+	public String getRokTrajanja() {
+		return rokTrajanja;
+	}
+
+	public void setRokTrajanja(String rokTrajanja) {
+		if (rokTrajanja == null) {
+			System.out.println("Greska: Naziv je null String");
+		} else {
+			this.rokTrajanja = rokTrajanja;
+		}
+	}
+
+	
+}

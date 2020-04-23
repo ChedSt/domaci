@@ -1,0 +1,16 @@
+package zadatak26;
+
+public class TestNizaOcena {
+
+	public static void main(String[] args) {
+		NizOcena niz = new NizOcena();
+		niz.dodavanje('A');
+		niz.dodavanje('A');
+		niz.dodavanje('B');
+		niz.dodavanje('F');
+		niz.dodavanje('F');
+		niz.dodavanje('D');
+		System.out.println("Prosecna ocena " + (niz.provera() ? "jeste" : "nije") + " postignuta");
+	}
+
+}

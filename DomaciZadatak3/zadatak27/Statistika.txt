@@ -1,0 +1,5 @@
+package zadatak27;
+
+public class Statistika {
+	double procenaProlaznosti;
+}

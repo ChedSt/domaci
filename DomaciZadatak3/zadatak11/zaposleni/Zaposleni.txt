@@ -1,0 +1,24 @@
+package zadatak11.zaposleni;
+
+import zadatak11.ljudi.Osoba;
+
+public class Zaposleni extends Osoba{
+	private double plata;
+
+	public double getPlata() {
+		return plata;
+	}
+
+	public void setPlata(double plata) {
+		if (plata > 0) {
+			this.plata = plata;
+		} else {
+			System.out.println("Greska: Plata nije veca od 0");
+		}
+	}
+	
+	public void ispisiZaposlenog() {
+		ispisi();
+		System.out.println(", plata: " + plata);
+	}
+}

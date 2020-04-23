@@ -1,0 +1,24 @@
+package zadatak18;
+
+public class ParkingMesto {
+	private boolean indikator;
+	private String registarskiBroj;
+	
+	public boolean getIndikator() {
+		return indikator;
+	}
+	
+	public void setIndikator(boolean indikator) {
+		this.indikator = indikator;
+	}
+	
+	public String getRegistarskiBroj() {
+		return registarskiBroj;
+	}
+	
+	public void setRegistarskiBroj(String registarskiBroj) {
+		this.registarskiBroj = registarskiBroj;
+	}
+
+	
+}

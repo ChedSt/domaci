@@ -1,0 +1,35 @@
+package zadatak3;
+
+public class Radio extends KucniAparat {
+	private double frekvencija = 87.5;
+
+	public Radio(String marka, String model, boolean ukljucen, double frekvencija) {
+		super(marka, model, ukljucen);
+		if (frekvencija >= 87.5 && frekvencija <= 108.0) {
+			this.frekvencija = frekvencija;
+		} else {
+			System.out.println("Greska: Frekvencija mora biti izmedju 87.5 i 108.0");
+		}
+	}
+
+	public double getFrekvencija() {
+		return frekvencija;
+	}
+
+	public void setFrekvencija(double frekvencija) {
+		if (frekvencija >= 87.5 && frekvencija <= 108.0) {
+			this.frekvencija = frekvencija;
+		} else {
+			System.out.println("Greska: Frekvencija mora biti izmedju 87.5 i 108.0");
+		}
+	}
+
+	@Override
+	public void ispisi() {
+		if (getUkljucen()) {
+			System.out.print("Frekvencija: " + frekvencija);
+		} else {
+			System.out.print("Radio je iskljucen");
+		}
+	}
+}

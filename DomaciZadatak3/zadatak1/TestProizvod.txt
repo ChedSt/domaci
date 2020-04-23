@@ -1,0 +1,15 @@
+package zadatak1;
+
+public class TestProizvod {
+
+	public static void main(String[] args) {
+		PrehrambeniProizvod Prvi = new PrehrambeniProizvod("hleb", 30.0, "15.12.2018.");
+		PrehrambeniProizvod Drugi = new PrehrambeniProizvod();
+		Drugi.setNaziv("senf");
+		Drugi.setCena(120.5);
+		Drugi.setRokTrajanja("10.10.2019.");
+		System.out.println("Prvi: " + Prvi.getNaziv() + " " + Prvi.getCena() + " " + Prvi.getRokTrajanja());
+		System.out.println("Drugi: " + Drugi.getNaziv() + " " + Drugi.getCena() + " " + Drugi.getRokTrajanja());
+	}
+
+}

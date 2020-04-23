@@ -1,0 +1,13 @@
+package zadatak28;
+
+public class TestDnevneTemperature {
+	
+	public static void main(String[] args) {
+		DnevneTemperature dnevneTemperature = new DnevneTemperature();
+		dnevneTemperature.dodaj(12, 30);
+		dnevneTemperature.dodaj(34, 150);
+		dnevneTemperature.dodaj(8, 365);
+		dnevneTemperature.ispisFebruar();
+	}
+	
+}

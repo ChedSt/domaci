@@ -1,0 +1,13 @@
+package zadatak15;
+
+public class TestAutobus {
+
+	public static void main(String[] args) {
+		Autobus autobus = new Autobus();
+		autobus.uvodjenje(0);
+		autobus.uvodjenje(19);
+		autobus.uvodjenje(49);
+		autobus.ispis();
+	}
+	
+}

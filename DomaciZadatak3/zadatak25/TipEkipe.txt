@@ -1,0 +1,5 @@
+package zadatak25;
+
+public class TipEkipe {
+	char oznaka;
+}

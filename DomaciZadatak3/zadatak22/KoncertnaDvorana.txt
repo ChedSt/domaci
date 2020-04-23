@@ -1,0 +1,65 @@
+package zadatak22;
+
+public class KoncertnaDvorana {
+	static final int KAPACITET = 300;
+	private boolean[] niz = new boolean[KAPACITET];
+
+	public KoncertnaDvorana() {
+		for (int i = 0; i < KAPACITET; i++) {
+			niz[i] = true;
+		}
+	}
+
+	public void uvodjenje(int redniBroj) {
+		if ((redniBroj >= 1 && redniBroj <= KAPACITET)) {
+			if (niz[redniBroj - 1]) {
+				niz[redniBroj - 1] = false;
+				System.out.println("Gledalac uveden");
+				return;
+			}
+		}
+		System.out.println("Greska: Mesto ne postoji ili je zauzeto");
+	}
+	
+	public boolean provera() {
+		double broj = 0, ukupno = 0;
+		for (int i = 0; i < 150; i++) {
+			if (!niz[i]) {
+				broj++;
+				ukupno++;
+			}
+		}
+		if (broj / 150 * 100 <= 50) {
+			return false;
+		}
+		broj = 0;
+		for (int i = 150; i < KAPACITET; i++) {
+			if (!niz[i]) {
+				broj++;
+				ukupno++;
+			}
+		}
+		if (broj / 150 * 100 <= 40) {
+			return false;
+		}
+		if (ukupno / KAPACITET * 100 <= 55) {
+			return false;
+		}
+		return true;
+	}
+	
+	public void ispis() {
+		int broj = 0;
+		for (int i = 0; i < KAPACITET; i++) {
+			if (i % 10 == 0) {
+				broj = 0;
+			}
+			if (niz[i]) {
+				broj++;
+			}
+			if (i % 10 == 9) {
+				System.out.println("U redu br. " + (i / 10 + 1) + " ima " + broj + " slobodnih sedista");
+			}
+		}
+	}
+}

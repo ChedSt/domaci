@@ -1,0 +1,5 @@
+package zadatak13;
+
+public interface SluzbaProdaje {
+	public void prodajRobu(int brojKomada);
+}

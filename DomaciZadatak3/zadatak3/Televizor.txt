@@ -1,0 +1,29 @@
+package zadatak3;
+
+public class Televizor extends KucniAparat {
+	private int program;
+
+	public Televizor(String marka, String model, boolean ukljucen, int program) {
+		super(marka, model, ukljucen);
+		if (program >= 1 && program <= 40) {
+			this.program = program;
+		} else {
+			System.out.println("Greska: Program mora biti izmedju 1 i 40");
+		}
+	}
+
+	public void promeniProgramNavise() {
+		program = program == 40 ? 1 : program + 1;
+	}
+
+	public void promeniProgramNanize() {
+		program = program == 1 ? 40 : program - 1;
+	}
+
+	@Override
+	public void ispisi() {
+		super.ispisi();
+		System.out.print(", Program: " + program);
+
+	}
+}

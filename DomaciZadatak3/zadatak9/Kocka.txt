@@ -1,0 +1,28 @@
+package zadatak9;
+
+public class Kocka extends GeometrijskoTelo{
+	private double duzinaStranice;
+
+	public double getDuzinaStranice() {
+		return duzinaStranice;
+	}
+
+	public void setDuzinaStranice(double d) {
+		if (d > 0) {
+			this.duzinaStranice = d;
+		} else {
+			System.out.println("Greska: Duzina stranice mora biti veca od 0");
+		}
+	}
+
+	@Override
+	public void izracunajPovrsinu() {
+		povrsina = duzinaStranice * duzinaStranice * 6;
+	}
+
+	@Override
+	public void izracunajZapreminu() {
+		zapremina = duzinaStranice * duzinaStranice * duzinaStranice;
+	}
+	
+}

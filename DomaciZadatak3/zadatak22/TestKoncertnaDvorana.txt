@@ -1,0 +1,14 @@
+package zadatak22;
+
+public class TestKoncertnaDvorana {
+
+	public static void main(String[] args) {
+		KoncertnaDvorana koncertnaDvorana = new KoncertnaDvorana();
+		koncertnaDvorana.uvodjenje(21);
+		koncertnaDvorana.uvodjenje(23);
+		koncertnaDvorana.uvodjenje(24);
+		System.out.println("Koncertna dvorana " + (koncertnaDvorana.provera() ? "jeste" : "nije") + " dovoljno popunjena");
+		koncertnaDvorana.ispis();
+	}
+	
+}

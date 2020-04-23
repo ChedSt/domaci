@@ -1,0 +1,70 @@
+package zadatak30;
+
+public class Trajekt {
+	private boolean[] niz;
+	private int ukupanBrojSedista;
+
+	public Trajekt(int brojSedista, int brojMesta) {
+		if (brojSedista >= 0 && brojMesta >= 0) {
+			niz = new boolean[brojSedista + brojMesta];
+			ukupanBrojSedista = brojSedista;
+		} else {
+			niz = new boolean[120];
+			ukupanBrojSedista = 0;
+		}
+
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = true;
+		}
+	}
+
+	public void uvodjenjeAuta(int redniBroj) {
+		if (redniBroj >= 0 && redniBroj <= ukupanBrojSedista) {
+			if (!niz[redniBroj]) {
+				niz[redniBroj] = false;
+				return;
+			}
+		}
+		System.out.println("Greska: Mesto nije predvidjeno za automobile ili je zauzeto");
+	}
+
+	public void izvestaj() {
+		int brojS = 0, brojM = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i]) {
+				if (i < niz.length - ukupanBrojSedista) {
+					brojM++;
+				} else {
+					brojS++;
+				}
+			}
+		}
+		System.out.println("Broj mesta za automobile:");
+		System.out.println("\tSlobodnih: " + brojM);
+		System.out.println("\tZauzetih" + (niz.length - ukupanBrojSedista - brojM));
+		System.out.println("Broj sedista:");
+		System.out.println("\tSlobodnih: " + brojS);
+		System.out.println("\tZauzetih" + (ukupanBrojSedista - brojS));
+		if (brojM / (niz.length - ukupanBrojSedista) >= 0.45 && brojS / ukupanBrojSedista >= 0.66) {
+			System.out.println("Put se isplati");
+		} else {
+			System.out.println("Put se ne isplati");
+		}
+	}
+	
+	public boolean provera() {
+		int broj = 0;
+		for (int i = 0; i < niz.length - ukupanBrojSedista; i++) {
+			if (niz[i]) {
+				broj++;
+			}
+			if (broj == 5) {
+				return true;
+			}
+			if (!niz[i] && broj != 0) {
+				broj = 0;
+			}
+		}
+		return false;
+	}
+}

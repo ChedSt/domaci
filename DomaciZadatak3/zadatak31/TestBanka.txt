@@ -1,0 +1,13 @@
+package zadatak31;
+
+public class TestBanka {
+
+	public static void main(String[] args) {
+		Banka banka = new Banka(40);
+		banka.unos(3000);
+		banka.unos(2000);
+		banka.unos(5000);
+		System.out.println("Prosecna rata: " + banka.prosek());
+	}
+	
+}

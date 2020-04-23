@@ -1,0 +1,47 @@
+package zadatak28;
+
+public class DnevneTemperature {
+	private int[] niz = new int[365];
+	public static final int MIN_TEMP = -50;
+
+	public void dodaj(int temperatura, int redniBroj) {
+		if (temperatura > MIN_TEMP && redniBroj >= 1 && redniBroj <= 365) {
+			niz[redniBroj - 1] = temperatura;
+		} else {
+			System.out.println("Greska: Temperatura manja od minimalne ili je dan van raspona");
+		}
+	}
+	
+	public void ispisFebruar() {
+		int broj = 0;
+		for (int i = 31; i < 31 + 28; i++) {
+			broj += niz[i];
+		}
+		System.out.println("Zbir temperature za februar: " + broj);
+	}
+	
+	public void ispisVikend() {
+		int broj = 6;
+		System.out.println("Temperature za dane vikenda su bile:");
+		while (broj < 365) {
+			System.out.println(niz[broj] + " " + niz[broj + 1]);
+			broj += 7;
+		}
+	}
+	
+	public double[] prosek() {
+		int ni = 0;
+		double prosek = 0;
+		double[] niz = new double[52];
+		for (int i = 0; i < 365; i++) {
+			if (i % 7 == 0) {
+				prosek = 0;
+			}
+			prosek += this.niz[i];
+			if (i % 7 == 6) {
+				niz[ni++] = prosek / 7;
+			}
+		}
+		return niz;
+	}
+}

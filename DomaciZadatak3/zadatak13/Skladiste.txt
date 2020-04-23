@@ -1,0 +1,22 @@
+package zadatak13;
+
+public class Skladiste implements SluzbaNabavke{
+	public int stanjeNaSkladistu = 1000;
+	
+	@Override
+	public void dodajRobu(int brojKomada) {
+		if (brojKomada > 0) {
+			stanjeNaSkladistu += brojKomada;
+		} else {
+			System.out.println("Greska: Broj komada nije veci od 0");
+		}		
+	}
+	
+	public void skiniSaStanja(int brojKomada) {
+		if (brojKomada > 0 && brojKomada <= stanjeNaSkladistu) {
+			stanjeNaSkladistu -= brojKomada;
+		} else {
+			System.out.println("Greska: Broj komada nije veci od 0 ili nema dovoljno proizvoda");
+		}
+	}
+}

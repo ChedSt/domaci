@@ -1,0 +1,56 @@
+package zadatak24;
+
+public class TezinaClanovaEkipe {
+	private double[] niz = new double[20];
+	private int brojClanova = 0;
+	static final int MIN_TEZINA = 40;
+	
+	public TezinaClanovaEkipe() {
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = -1;
+		}
+	}
+	
+	public void dodaj(double tezina) {
+		if (brojClanova < niz.length && tezina > MIN_TEZINA) {
+			niz[brojClanova++] = tezina;
+		} else {
+			System.out.println("Greska: Niz popunjen do kraja ili tezina ispod minimuma");
+		}
+	}
+	
+	public void procenat() {
+		int brojL = 0, brojS = 0, brojT = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i] < 65) {
+				brojL++;
+			} else if (niz[i] < 85) {
+				brojS++;
+			} else {
+				brojT++;
+			}
+		}
+		System.out.println("Lakoj kategoriji pripada " + ((double) brojL / niz.length * 100) + "%");
+		System.out.println("Srednjoj kategoriji pripada " + ((double) brojS / niz.length * 100) + "%");
+		System.out.println("Teskoj kategoriji pripada " + ((double) brojT / niz.length * 100) + "%");
+	}
+	
+	
+	public static double[] sastavi(double[] niz) {
+		int indexi = 0, indexj = 0, ni = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (indexi == 0 && niz[i] == -1) {
+				indexi = i;
+			}
+			if (indexi != 0 && niz[i] == -1) {
+				indexj = i;
+				break;
+			}
+		}
+		double[] tmp = new double[indexj - indexi - 1];
+		for (int i = indexi + 1; i < indexj; i++) {
+			tmp[ni++] = niz[i];
+		}
+		return tmp;
+	}
+}

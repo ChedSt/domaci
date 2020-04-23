@@ -1,0 +1,5 @@
+package zadatak23;
+
+public class ZaradaDvorane {
+	int zarada;
+}

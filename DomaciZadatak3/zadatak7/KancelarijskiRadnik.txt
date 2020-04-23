@@ -1,0 +1,9 @@
+package zadatak7;
+
+public class KancelarijskiRadnik extends Zaposleni{
+	@Override
+	public void izracunajPlatu(int brojSati) {
+		plata = 100 * brojSati;
+	}
+
+}

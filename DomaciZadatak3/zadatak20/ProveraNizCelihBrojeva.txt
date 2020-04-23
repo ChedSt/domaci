@@ -1,0 +1,26 @@
+package zadatak20;
+
+public class ProveraNizCelihBrojeva {
+	
+	public static void main(String[] args) {
+		NizCelihBrojeva prvi = new NizCelihBrojeva(3);
+		NizCelihBrojeva drugi = new NizCelihBrojeva(5);
+		NizCelihBrojeva treci = new NizCelihBrojeva(10);
+		
+		prvi.dodavanje(1);
+		prvi.dodavanje(-1);
+		prvi.dodavanje(3);
+		
+		drugi.dodavanje(34);
+		drugi.dodavanje(45);
+		
+		treci.dodavanje(56);
+		treci.dodavanje(67);
+		treci.dodavanje(-89);
+		
+		System.out.println("Zbir prvog i poslednjeg prvog niza: " + prvi.saberi());
+		drugi.ispisObrnuto();
+		treci.ispisObrnuto();
+	}
+	
+}

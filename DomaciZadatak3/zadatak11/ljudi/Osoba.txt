@@ -1,0 +1,50 @@
+package zadatak11.ljudi;
+
+public class Osoba {
+	private String ime = "N";
+	private String prezime = "N";
+	private String jmbg;
+	
+	public String getIme() {
+		return ime;
+	}
+	
+	public void setIme(String ime) {
+		if (ime != null) {
+			this.ime = ime;
+		} else {
+			System.out.println("Greska: Ime ima null vrednost");
+		}
+	}
+	
+	public String getPrezime() {
+		return prezime;
+	}
+	
+	public void setPrezime(String prezime) {
+		if (prezime != null) {
+			this.prezime = prezime;
+		} else {
+			System.out.println("Greska: Prezime ima null vrednost");
+		}
+	}
+	
+	public String getJmbg() {
+		return jmbg;
+	}
+	
+	public void setJmbg(String jmbg) {
+		if (proveriJMBG(jmbg)) {
+			this.jmbg = jmbg;
+		} else {
+			System.out.println("Greska: JMBG ima null vrednost ili je kraca od 13 karaktera");
+		}
+	}
+	
+	public boolean proveriJMBG(String jmbg) {
+		return (jmbg != null && jmbg.length() == 13) ? true : false;
+	}
+	protected void ispisi() {
+		System.out.print("Ime: " + ime + ", prezime: " + prezime + ", JMBG: " + jmbg);
+	}
+}

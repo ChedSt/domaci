@@ -1,0 +1,16 @@
+package zadatak8;
+
+public class TestVozila {
+
+	public static void main(String[] args) {
+		Automobil automobil = new Automobil();
+		automobil.setMarka("Mercedes");
+		automobil.setModel("E220");
+		Avion avion = new Avion();
+		avion.setMarka("Boeing");
+		avion.setModel("747");
+		automobil.ispisi();
+		avion.ispisi();
+	}
+
+}

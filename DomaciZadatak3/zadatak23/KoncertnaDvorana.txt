@@ -1,0 +1,61 @@
+package zadatak23;
+
+public class KoncertnaDvorana {
+	private boolean[] niz;
+	private ZaradaDvorane zaradaDvorane = new ZaradaDvorane();
+
+	public KoncertnaDvorana(int kapacitet) {
+		if (kapacitet > 0) {
+			niz = new boolean[kapacitet];
+		} else {
+			niz = new boolean[120];
+			System.out.println("Greska: Kapacitet nije veci od 0");
+		}
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = true;
+		}
+	}
+
+	public void uvodjenje(int redniBroj) {
+		if (redniBroj >= 0 && redniBroj < niz.length) {
+			if (niz[redniBroj]) {
+				niz[redniBroj] = false;
+				System.out.println("Gledalac uveden");
+				return;
+			}
+		}
+	}
+	
+	public void zarada() {
+		int broj = 0;
+		for (int i = 0; i < niz.length / 2; i++) {
+			if (!niz[i]) {
+				broj += 500;
+				
+			}
+		}
+		for (int i = niz.length / 2; i < niz.length; i++) {
+			if (!niz[i]) {
+				broj += 250;
+			}
+		}
+		zaradaDvorane.zarada = broj;
+		System.out.println("Zarada dvorane: " + zaradaDvorane.zarada);
+	}
+	
+	public boolean susedna() {
+		int broj = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (i % 10 == 0) {
+				broj = 0;
+			}
+			if (niz[i]) {
+				broj++;
+			}
+			if (broj == 3) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

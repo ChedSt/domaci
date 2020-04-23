@@ -1,0 +1,74 @@
+package zadatak17;
+
+public class NizCena {
+	private double[] niz = new double[100];
+	private int brojac = 0;
+	
+	public void dodavanje(double cena) {
+		if (cena > 0 && brojac < 100) {
+			niz[brojac++] = cena;
+		} else {
+			System.out.println("Greska: Cena nije veca od 0 ili nema mesta u nizu");
+		}
+	}
+	
+	public double prosek() {
+		if (niz.length == 0) {
+			System.out.println("Niz je prazan");
+			return 0;
+		}
+		double broj = 0.0;
+		for (int i = 0; i < brojac; i++) {
+			broj += niz[i];
+		}
+		return broj / brojac;
+	}
+	
+	public double najniza() {
+		if (niz.length == 0) {
+			System.out.println("Niz je prazan");
+			return 0;
+		}
+		double min = niz[0];
+		for (int i = 1; i < brojac; i++) {
+			if (min > niz[i]) {
+				min = niz[i];
+			}
+		}
+		return min;
+	}
+	
+	public double najvisa() {
+		if (niz.length == 0) {
+			System.out.println("Niz je prazan");
+			return 0;
+		}
+		double max = niz[0];
+		for (int i = 1; i < brojac; i++) {
+			if (max < niz[i]) {
+				max = niz[i];
+			}
+		}
+		return max;
+	}
+	
+	public double razlika() {
+		if (niz.length == 0) {
+			System.out.println("Niz je prazan");
+			return 0;
+		}
+		return najvisa() - najniza();
+	}
+	
+	public void ispis(double vrednost) {
+		if (niz.length == 0) {
+			System.out.println("Niz je prazan");
+		}
+		System.out.println("Brojevi veci od " + vrednost);
+		for (int i = 0; i < brojac; i++) {
+			if (niz[i] == vrednost) {
+				System.out.println(niz[i]);
+			}
+		}
+	}
+}

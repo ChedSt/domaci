@@ -1,0 +1,20 @@
+package zadatak8;
+
+public class Avion extends Vozilo{
+
+	@Override
+	public boolean daLiIdePoKopnu() {
+		return false;
+	}
+
+	@Override
+	public boolean daLiIdePoVodi() {
+		return false;
+	}
+
+	@Override
+	public boolean daLiIdePoVazduhu() {
+		return true;
+	}
+
+}

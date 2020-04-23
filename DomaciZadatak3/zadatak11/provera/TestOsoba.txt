@@ -1,0 +1,22 @@
+package zadatak11.provera;
+
+import zadatak11.ljudi.Osoba;
+import zadatak11.zaposleni.Zaposleni;
+
+public class TestOsoba {
+	
+	public static void main(String[] args) {
+		Osoba osoba = new Osoba();
+		osoba.setIme("Pera");
+		osoba.setPrezime("Peric");
+		osoba.setJmbg("3112979710089");
+		Zaposleni zaposleni = new Zaposleni();
+		zaposleni.setIme("Mika");
+		zaposleni.setPrezime("Lazic");
+		zaposleni.setJmbg("3110979710111");
+		zaposleni.setPlata(40000);
+		//osoba.ispisi(); Funkcija nije vidljiva
+		zaposleni.ispisiZaposlenog();
+	}
+	
+}

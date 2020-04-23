@@ -1,0 +1,13 @@
+package zadatak18;
+
+public class TestParking {
+
+	public static void main(String[] args) {
+		Parking parking = new Parking(50);
+		parking.uvodjenje("BG 123-456");
+		parking.uvodjenje("NS 234-56");
+		parking.ispis();
+		parking.ispisBG();
+	}
+	
+}

@@ -1,0 +1,13 @@
+package zadatak23;
+
+public class TestKoncertnaDvorana {
+
+	public static void main(String[] args) {
+		KoncertnaDvorana koncertnaDvorana = new KoncertnaDvorana(40);
+		koncertnaDvorana.uvodjenje(0);
+		koncertnaDvorana.uvodjenje(20);
+		koncertnaDvorana.uvodjenje(40);
+		koncertnaDvorana.zarada();
+	}
+	
+}

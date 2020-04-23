@@ -1,0 +1,71 @@
+package zadatak26;
+
+public class NizOcena {
+	private char[] niz = new char[30];
+	private int brojOcena = 0;
+	public static final char OCEKIVANA_OCENA = 'B';
+
+	public NizOcena() {
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = 'N';
+		}
+	}
+
+	public void dodavanje(char ocena) {
+		if (brojOcena < niz.length) {
+			switch (ocena) {
+			case 'A':
+			case 'B':
+			case 'C':
+			case 'D':
+			case 'F':
+				niz[brojOcena++] = ocena;
+				return;
+			}
+		}
+		System.out.println("Greska: Niz je vec pun ili ocena nije ispravna");
+	}
+
+	public boolean provera() {
+		int brojA = 0, brojB = 0, brojC = 0, brojD = 0, brojF = 0;
+		for (int i = 0; i < brojOcena; i++) {
+			switch (niz[i]) {
+			case 'A':
+				brojA++;
+				break;
+			case OCEKIVANA_OCENA:
+				brojB++;
+				break;
+			case 'C':
+				brojC++;
+				break;
+			case 'D':
+				brojD++;
+				break;
+			case 'F':
+				brojF++;
+				break;
+			}
+		}
+		if (brojA < brojB && brojC < brojB && brojD < brojB && brojF < brojB) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static void ispis(char[] niz) {
+		int broj = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (i % 30 == 0) {
+				broj = 0;
+			}
+			if (niz[i] == 'A') {
+				broj++;
+			}
+			if (i % 30 == 29) {
+				System.out.println("U odeljenju br. " + (i / 30 + 1) + " ima " + broj + " djaka sa ocenom A");
+			}
+		}
+	}
+}

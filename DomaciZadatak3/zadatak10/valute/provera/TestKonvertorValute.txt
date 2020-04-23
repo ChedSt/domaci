@@ -1,0 +1,15 @@
+package zadatak10.valute.provera;
+
+import zadatak10.valute.KonvertorValute;
+
+public class TestKonvertorValute {
+	public static void main(String[] args) {
+		KonvertorValute konvertorValute = new KonvertorValute();
+		konvertorValute.setKursEvra(80.0);
+		konvertorValute.setKursDolara(55.0);
+		System.out.println("16000 dinara = " + konvertorValute.konvertujDinareUEvre(16000) + " evra");
+		System.out.println("550 dinara = " + konvertorValute.konvertujDinareUDolare(550) + " dolara");
+		//konvertorValute.ispisiKursnuListu(); Funkcija nije vidljiva izvan paketa
+	}
+
+}

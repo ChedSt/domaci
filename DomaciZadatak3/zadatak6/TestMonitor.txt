@@ -1,0 +1,19 @@
+package zadatak6;
+
+public class TestMonitor {
+
+	public static void main(String[] args) {
+		Monitor Prvi = new Monitor();
+		Prvi.setMarka("Samsung");
+		Prvi.setModel("SyncMaster 151n");
+		Prvi.setVelicinaEkrana(15);
+		Monitor Drugi = new Monitor();
+		Drugi.setMarka("Sony");
+		Drugi.setModel("WS");
+		Drugi.setVelicinaEkrana(17);
+		System.out.println("Monitori " + (Prvi.equals(Drugi) ? "su " : "nisu ") + "isti");
+		System.out.println(Prvi.toString());
+		System.out.println(Drugi.toString());
+	}
+	
+}

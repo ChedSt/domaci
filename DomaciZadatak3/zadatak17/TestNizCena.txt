@@ -1,0 +1,15 @@
+package zadatak17;
+
+public class TestNizCena {
+
+	public static void main(String[] args) {
+		NizCena nizCena = new NizCena();
+		nizCena.dodavanje(123.0);
+		nizCena.dodavanje(234.55);
+		nizCena.dodavanje(301.0);
+		nizCena.dodavanje(5000.0);
+		nizCena.ispis(300.0);
+		System.out.println("Razlika izmedju najnize i najvise cene iznosi: " + nizCena.razlika());
+	}
+	
+}

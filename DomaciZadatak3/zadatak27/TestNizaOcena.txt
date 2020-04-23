@@ -1,0 +1,16 @@
+package zadatak27;
+
+public class TestNizaOcena {
+
+	public static void main(String[] args) {
+		NizOcena niz = new NizOcena(10);
+		niz.dodavanje('A');
+		niz.dodavanje('B');
+		niz.dodavanje('C');
+		niz.dodavanje('N');
+		niz.dodavanje('N');
+		niz.dodavanje('D');
+		niz.provera();
+	}
+	
+}

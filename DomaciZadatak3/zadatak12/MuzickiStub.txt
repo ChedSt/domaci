@@ -1,0 +1,46 @@
+package zadatak12;
+
+public class MuzickiStub extends MuzickiUredjaj implements RadioKomponenta, CDKomponenta{
+	private double frekvencija = 87.5;
+	private int brojPesme;
+	private boolean ukljucenRadio;
+	private boolean ukljucenCD;
+	
+	@Override
+	public void pustiPesmu(int brojPesme) {
+		ukljucenRadio = false;
+		ukljucenCD = true;
+		if (brojPesme >= 1 && brojPesme <= 21) {
+			this.brojPesme = brojPesme;
+		} else {
+			this.brojPesme = 1;
+		}
+	}
+
+	@Override
+	public void promeniStanicu(double frekvencija) {
+		ukljucenRadio = true;
+		ukljucenCD = false;
+		if (frekvencija >= 87.5 && frekvencija <= 108.0) {
+			this.frekvencija = frekvencija;
+		} else {
+			this.frekvencija = 87.5;
+		}
+	}
+
+	@Override
+	public void ispisi() {
+		if (ukljucen) {
+			System.out.println("Jacina tona: " + jacinaTona);
+			if (ukljucenRadio) {
+				System.out.println("Trenutna frekvencija: " + frekvencija);
+			}
+			if (ukljucenCD) {
+				System.out.println("Trenutna pesma: " + brojPesme);
+			}
+		} else {
+			System.out.println("Muzicki stub je iskljucen");
+		}
+	}
+
+}

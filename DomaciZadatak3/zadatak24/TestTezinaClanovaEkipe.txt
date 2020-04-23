@@ -1,0 +1,17 @@
+package zadatak24;
+
+public class TestTezinaClanovaEkipe {
+
+	public static void main(String[] args) {
+		TezinaClanovaEkipe prvi = new TezinaClanovaEkipe();
+		TezinaClanovaEkipe drugi = new TezinaClanovaEkipe();
+		prvi.dodaj(100.0);
+		prvi.dodaj(55.5);
+		prvi.dodaj(44.5);
+		drugi.dodaj(66.6);
+		drugi.dodaj(44.3);
+		drugi.dodaj(150.0);
+		prvi.procenat();
+	}
+	
+}

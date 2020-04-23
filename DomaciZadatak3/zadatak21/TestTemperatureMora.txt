@@ -1,0 +1,14 @@
+package zadatak21;
+
+public class TestTemperatureMora {
+
+	public static void main(String[] args) {
+		TemperaturaMora prvi = new TemperaturaMora();
+		TemperaturaMora drugi = new TemperaturaMora();
+		prvi.unos(41, 31 + 1);
+		drugi.unos(23.5, 25);
+		System.out.println("Prvo more " + (prvi.provera() ? "moze" : "ne moze") + " da ima zivi svet u sebi");
+		System.out.println("Drugo more " + (drugi.provera() ? "moze" : "ne moze") + " da ima zivi svet u sebi");
+	}
+	
+}

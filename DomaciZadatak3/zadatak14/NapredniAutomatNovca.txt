@@ -1,0 +1,36 @@
+package zadatak14;
+
+public class NapredniAutomatNovca implements AutomatNovcaInterfejs {
+	private double stanje = 20000.0;
+
+	@Override
+	public void uloziNovac(double iznos) {
+		if (iznos <= 0) {
+			System.out.println("Greska: Iznos nije veci od 0");
+		} else if (iznos > 20000) {
+			System.out.println("Maksimalni iznos koji se moze uplatiti je 20.000");
+			stanje += 20000;
+		} else {
+			stanje += iznos;
+		}
+
+	}
+
+	@Override
+	public void podigniNovac(double iznos) {
+		if (iznos <= 0 && iznos > stanje) {
+			System.out.println("Greska: Iznos nije veci od 0 ili nema dovoljno sredstava na stanju");
+		} else if (iznos > 10000) {
+			System.out.println("Maksimalni iznos koji se moze podici je 10.000");
+			stanje -= 10000;
+		} else {
+			stanje -= iznos;
+		}		
+	}
+
+	public void ispisi() {
+		System.out.println("Trenutna kolicina novca na stanju: " + stanje);
+		System.out.println("Maksimalan iznos za uplatu: 20000");
+		System.out.println("Maksimalan iznos za isplatu: 10000");
+	}
+}

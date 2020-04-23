@@ -1,0 +1,8 @@
+package zadatak7;
+
+public class Menadzer extends Zaposleni{
+	@Override
+	public void izracunajPlatu(int brojSati) {
+		plata = 1000 * brojSati;
+	}
+}

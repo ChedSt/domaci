@@ -1,0 +1,19 @@
+package zadatak2;
+
+public class Penzioner extends Osoba {
+	private double penzija;
+
+	public double getPenzija() {
+		return penzija;
+	}
+
+	public void setPenzija(double penzija) {
+		if (penzija > 0) {
+			this.penzija = penzija;
+		} else {
+			System.out.println("Greska: Penzija nije veca od 0");
+		}
+	}
+	
+	
+}

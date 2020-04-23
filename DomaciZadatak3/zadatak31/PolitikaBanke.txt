@@ -1,0 +1,5 @@
+package zadatak31;
+
+public class PolitikaBanke {
+	public static final double KAMATNA_STOPA = 5.8;
+}

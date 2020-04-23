@@ -1,0 +1,68 @@
+package zadatak6;
+
+public class Monitor {
+	private String marka;
+	private String model;
+	private int velicinaEkrana;
+	
+	public String getMarka() {
+		return marka;
+	}
+
+	public void setMarka(String marka) {
+		if (marka != null) {
+			this.marka = marka;
+		} else {
+			System.out.println("Greska: Marka ima null vrednost");
+		}
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		if (model != null) {
+			this.model = model;
+		} else {
+			System.out.println("Greska: model ima null vrednost");
+		}
+	}
+	
+	public int getVelicinaEkrana() {
+		return velicinaEkrana;
+	}
+	
+	public void setVelicinaEkrana(int velicinaEkrana) {
+		if (velicinaEkrana >= 12) {
+			this.velicinaEkrana = velicinaEkrana;
+		} else {
+			System.out.println("Greska: velicina ekrana je manja od 12");
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Monitor marka: " + marka + ", model: " + model + ", velicina ekrana: " + velicinaEkrana + "\"";
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		if (object == this) {
+			return true;
+		}
+		
+		if (!(object instanceof Monitor)) {
+			System.out.println("Greska: Nije unet objekat klase Monitor");
+			return false;
+		}
+		
+		Monitor monitor = (Monitor) object;
+		
+		if (monitor.marka.equals(this.marka) && monitor.model.equals(this.model) && monitor.velicinaEkrana == this.velicinaEkrana) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

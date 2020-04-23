@@ -1,0 +1,43 @@
+package zadatak8;
+
+public abstract class Vozilo {
+	private String marka;
+	private String model;
+
+	public String getMarka() {
+		return marka;
+	}
+
+	public void setMarka(String marka) {
+		if (marka != null) {
+			this.marka = marka;
+		} else {
+			System.out.println("Greska: Marka ima null vrednost");
+		}
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		if (model != null) {
+			this.model = model;
+		} else {
+			System.out.println("Greska: Model ima null vrednost");
+		}
+	}
+	
+	public abstract boolean daLiIdePoKopnu();
+	public abstract boolean daLiIdePoVodi();
+	public abstract boolean daLiIdePoVazduhu();
+	public void ispisi() {
+		System.out.println(
+				"Marka: " + marka +
+				", model: " + model +
+				", ide po kopnu: " + (daLiIdePoKopnu() ? "da" : "ne") +
+				", ide po vodi: " + (daLiIdePoVodi() ? "da" : "ne") +
+				", ide po vazduhu: " + (daLiIdePoVazduhu() ? "da" : "ne")
+				);
+	}
+}

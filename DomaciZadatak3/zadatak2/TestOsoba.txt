@@ -1,0 +1,25 @@
+package zadatak2;
+
+public class TestOsoba {
+	
+	public static void main(String[] args) {
+		Osoba osoba = new Osoba();
+		osoba.setIme("Pera");
+		osoba.setPrezime("Peric");
+		osoba.setJmbg("1212007710567");
+		Djak djak = new Djak();
+		djak.setIme("Mika");
+		djak.setPrezime("Lazic");
+		djak.setJmbg("1010000715076");
+		djak.setProsecnaOcena(5.0);
+		Penzioner penzioner = new Penzioner();
+		penzioner.setIme("Zika");
+		penzioner.setPrezime("Zikic");
+		penzioner.setJmbg("0909944710078");
+		penzioner.setPenzija(23400.0);
+		System.out.println(osoba.getIme() + " " + osoba.getPrezime() + " " + osoba.getJmbg());
+		System.out.println(djak.getIme() + " " + djak.getPrezime() + " " + djak.getJmbg() + " " + djak.getProsecnaOcena());
+		System.out.println(penzioner.getIme() + " " + penzioner.getPrezime() + " " + penzioner.getJmbg() + " " + penzioner.getPenzija());
+	}
+	
+}

@@ -1,0 +1,32 @@
+package zadatak10.valute;
+
+public class KonvertorValute {
+	private double kursEvra;
+	private double kursDolara;
+	
+	public void setKursEvra(double kursEvra) {
+		if (kursEvra > 0) {
+			this.kursEvra = kursEvra;
+		} else {
+			System.out.println("Greska: Kurs evra nije veci od 0");
+		}
+	}
+	public void setKursDolara(double kursDolara) {
+		if (kursDolara > 0) {
+			this.kursDolara = kursDolara;
+		} else {
+			System.out.println("Greska: Kurs dolara nije veci od 0");
+		}
+	}
+	
+	public double konvertujDinareUEvre(double dinari) {
+		return dinari / kursEvra;
+	}
+	public double konvertujDinareUDolare(double dinari) {
+		return dinari / kursDolara;
+	}
+	void ispisiKursnuListu() {
+		System.out.println("Evro: " + kursEvra);
+		System.out.println("Dolar: " + kursDolara);
+	}
+}

@@ -1,0 +1,78 @@
+package zadatak27;
+
+public class NizOcena {
+	private char[] niz;
+	private int brojOcena = 0;
+	private Statistika statistikaOdeljenja = new Statistika();
+
+	public NizOcena(int broj) {
+		if (broj > 0) {
+			niz = new char[broj];
+		} else {
+			niz = new char[25];
+			System.out.println("Greska: Broj nije veci od 0");
+		}
+	}
+
+	public void dodavanje(char ocena) {
+		if (brojOcena < niz.length) {
+			switch (ocena) {
+			case 'A':
+			case 'B':
+			case 'C':
+			case 'D':
+			case 'N':
+				niz[brojOcena++] = ocena;
+				return;
+			}
+		}
+		System.out.println("Greska: Niz je vec pun ili ocena nije ispravna");
+	}
+	
+	public void provera() {
+		int brojA = 0, brojB = 0, brojC = 0, brojD = 0, brojN = 0;
+		for (int i = 0; i < brojOcena; i++) {
+			switch (niz[i]) {
+			case 'A':
+				brojA++;
+				break;
+			case 'B':
+				brojB++;
+				break;
+			case 'C':
+				brojC++;
+				break;
+			case 'D':
+				brojD++;
+				break;
+			case 'N':
+				brojN++;
+				break;
+			}
+		}
+		System.out.println(brojA + " ucenika ima ocenu A");
+		System.out.println(brojB + " ucenika ima ocenu B");
+		System.out.println(brojC + " ucenika ima ocenu C");
+		System.out.println(brojD + " ucenika ima ocenu D");
+		System.out.println(brojN + " ucenika ima ocenu N");
+		statistikaOdeljenja.procenaProlaznosti = (double) (niz.length - brojN) / niz.length * 100;
+	}
+	
+	public static boolean ispis(char[] niz) {
+		int broj = 0;
+		boolean flag = false;
+		while (broj != niz.length / 25) {
+			for (int i = 25 * broj; i < 25 * broj + 25; i++) {
+				if (niz[i] != 'N') {
+					flag = true;
+				}
+			}
+			if (!flag) {
+				return true;
+			}
+			flag = false;
+			broj++;
+		}
+		return false;
+	}
+}

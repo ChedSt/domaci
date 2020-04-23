@@ -1,0 +1,16 @@
+package zadatak13;
+
+public class TestProdavnica {
+
+	public static void main(String[] args) {
+		Prodavnica prodavnica = new Prodavnica();
+		Skladiste skladiste = new Skladiste();
+		Dobavljac dobavljac = new Dobavljac();
+		
+		prodavnica.ispisi();
+		dobavljac.izvrsiIsporuku(prodavnica, 100);
+		dobavljac.izvrsiIsporuku(skladiste, 500);
+		prodavnica.ispisi();
+	}
+	
+}

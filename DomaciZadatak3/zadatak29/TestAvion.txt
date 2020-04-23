@@ -1,0 +1,16 @@
+package zadatak29;
+
+public class TestAvion {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		Avion prvi = new Avion(120, 60);
+		Avion drugi = new Avion(50, 50);
+		Avion treci = new Avion(0, 30);
+		
+		treci.uvodjenje(true, 1);
+		treci.uvodjenje(true, 5);
+		treci.uvodjenje(true, 15);
+	}
+	
+}

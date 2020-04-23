@@ -1,0 +1,65 @@
+package zadatak31;
+
+public class Banka {
+	private int[] niz;
+	private int brojKredita = 0;
+	
+	public Banka(int brojKredita) {
+		niz = new int[brojKredita];
+		
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = 0;
+		}
+	}
+	
+	public void unos(int kredit) {
+		if (kredit > 0 && brojKredita != niz.length) {
+			niz[brojKredita++] = kredit;
+		} else {
+			System.out.println("Greska: Kredit nije veci od 0 ili nema vise mesta u nizu");
+		}
+	}
+	
+	public double prosek() {
+		int n = 0;
+		double broj = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i] > 10000) {
+				broj += (niz[i] * (100 + PolitikaBanke.KAMATNA_STOPA)) / (100 * 12);
+				n++;
+			}
+		}
+		return n == 0 ? 0 : broj / n;
+	}
+	
+	public static int brojBanke(int[] niz) {
+		int broj, zbir, i = 0, index = 1;
+		zbir = 0;
+		broj = 0;
+		while (niz[i] != -1) {
+			broj += niz[i];
+			i++;
+		}
+		zbir = broj;
+		i++;
+		broj = 0;
+		while (niz[i] != -1) {
+			broj += niz[i];
+			i++;
+		}
+		if (zbir < broj) {
+			zbir = broj;
+			index = 2;
+		}
+		broj = 0;
+		while (niz[i] != -1) {
+			broj += niz[i];
+			i++;
+		}
+		if (zbir < broj) {
+			zbir = broj;
+			index = 3;
+		}
+		return index;
+	}
+}

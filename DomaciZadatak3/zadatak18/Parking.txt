@@ -1,0 +1,103 @@
+package zadatak18;
+
+public class Parking {
+	private ParkingMesto[] niz;
+	
+	public Parking(int brojMesta) {
+		if (brojMesta > 0) {
+			niz = new ParkingMesto[brojMesta];
+		} else {
+			niz = new ParkingMesto[40];
+			System.out.println("Greska: Broj parking mesta nije veci od 0");
+		}
+		
+		for (int i = 0; i < niz.length; i++) {
+			niz[i] = new ParkingMesto();
+			niz[i].setIndikator(true);
+		}
+	}
+	
+	public void prvo() {
+		if (niz[0].getIndikator()) {
+			System.out.println("Prvo mesto je slobodno");
+		} else {
+			System.out.println("Na prvom parking mestu je vozilo " + niz[0].getRegistarskiBroj());
+		}
+	}
+	
+	public void poslednje() {
+		if (niz[niz.length - 1].getIndikator()) {
+			System.out.println("Poslednje mesto je slobodno");
+		} else {
+			System.out.println("Na poslednjem parking mestu je vozilo " + niz[niz.length - 1].getRegistarskiBroj());
+		}
+	}
+	
+	public boolean slobodnihMesta() {
+		for (int i = 0; i < niz.length; i++) {
+			if (!niz[i].getIndikator()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public int brojSlobodnihMesta() {
+		int broj = 0;
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i].getIndikator()) {
+				broj++;
+			}
+		}
+		return broj;
+	}
+	
+	public boolean provera(String registarskiBroj) {
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i].getRegistarskiBroj().equals(registarskiBroj)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void uvodjenje(String registarskiBroj) {
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i].getIndikator()) {
+				niz[i].setIndikator(false);
+				niz[i].setRegistarskiBroj(registarskiBroj);
+				return;
+			}
+		}
+		System.out.println("Na parkingu nema slobodnih mesta");
+	}
+	
+	public void izvodjenje(String registarskiBroj) {
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i].getRegistarskiBroj().equals(registarskiBroj)) {
+				niz[i].setIndikator(true);
+				niz[i].setRegistarskiBroj("");
+				return;
+			}
+		}
+		System.out.println("Na parkingu ne postoji vozilo sa tim registarskim brojem");
+	}
+	
+	public void ispis() {
+		for (int i = 0; i < niz.length; i++) {
+			if (!niz[i].getIndikator()) {
+				System.out.println("Na mestu " + i + " se nalazi vozilo " + niz[i].getRegistarskiBroj());
+			}
+		}
+	}
+	
+	public void ispisBG() {
+		System.out.println("Vozila iz Beograda");
+		
+		for (int i = 0; i < niz.length; i++) {
+			if (!niz[i].getIndikator() && niz[i].getRegistarskiBroj().substring(0, 2).equals("BG")) {
+				System.out.println("Vozilo " + niz[i].getRegistarskiBroj());
+			}
+		}
+	}
+}

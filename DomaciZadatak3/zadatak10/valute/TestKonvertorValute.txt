@@ -1,0 +1,14 @@
+package zadatak10.valute;
+
+public class TestKonvertorValute {
+
+	public static void main(String[] args) {
+		KonvertorValute konvertorValute = new KonvertorValute();
+		konvertorValute.setKursEvra(76.89);
+		konvertorValute.setKursDolara(60.34);
+		System.out.println("4500 dinara = " + konvertorValute.konvertujDinareUEvre(4500) + " evra");
+		System.out.println("600 dinara = " + konvertorValute.konvertujDinareUDolare(600) + " dolara");
+		konvertorValute.ispisiKursnuListu();
+	}
+	
+}

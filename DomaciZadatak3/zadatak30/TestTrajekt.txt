@@ -1,0 +1,14 @@
+package zadatak30;
+
+public class TestTrajekt {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		Trajekt prvi = new Trajekt(120, 20);
+		Trajekt drugi = new Trajekt(50, 50);
+		Trajekt treci = new Trajekt(30, 0);
+		
+		System.out.println("Na prvi trajekt se " + (prvi.provera() ? "moze" : "ne moze") + " smestiti trajekt");
+	}
+	
+}

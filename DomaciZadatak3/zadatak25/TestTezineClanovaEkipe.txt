@@ -1,0 +1,16 @@
+package zadatak25;
+
+public class TestTezineClanovaEkipe {
+	
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		TezinaClanovaEkipe prvi = new TezinaClanovaEkipe(20, 'L');
+		TezinaClanovaEkipe drugi = new TezinaClanovaEkipe(30, 'S');
+		TezinaClanovaEkipe treci = new TezinaClanovaEkipe(40, 'S');
+		
+		drugi.dodavanje(66);
+		drugi.dodavanje(69);
+		drugi.dodavanje(84);
+	}
+	
+}

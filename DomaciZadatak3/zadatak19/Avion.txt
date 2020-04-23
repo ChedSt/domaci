@@ -1,0 +1,113 @@
+package zadatak19;
+
+public class Avion {
+	private MestoUAvionu[] mesta;
+
+	public Avion() {
+		mesta = new MestoUAvionu[120];
+		for (int i = 0; i < 120; i++) {
+			mesta[i] = new MestoUAvionu();
+		}
+	}
+
+	public void uvediPutnika(int redniBroj, String imePrezime, int starost) {
+		if (redniBroj < 0 || redniBroj > 119 || !mesta[redniBroj].getIndikator()) {
+			System.out.println("Greska: Mesto je zauzeto ili van opsega");
+		} else {
+			mesta[redniBroj].setIndikator(false);
+			mesta[redniBroj].setImePrezime(imePrezime);
+			mesta[redniBroj].setStarost(starost);
+		}
+	}
+
+	public void izvediPutnika(int redniBroj) {
+		if (redniBroj < 0 || redniBroj > 119 || mesta[redniBroj].getIndikator()) {
+			System.out.println("Greska: Mesto je slobodno ili van opsega");
+		} else {
+			mesta[redniBroj].setIndikator(true);
+			mesta[redniBroj].setImePrezime("");
+			mesta[redniBroj].setStarost(0);
+		}
+	}
+
+	public boolean daLiJeUAvionu(String imePrezime) {
+		for (int i = 0; i < mesta.length; i++) {
+			if (mesta[i].getImePrezime().equals(imePrezime)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public double zauzetost() {
+		int broj = 0;
+		for (int i = 0; i < mesta.length; i++) {
+			if (!mesta[i].getIndikator()) {
+				broj++;
+			}
+		}
+		return (double) broj / mesta.length * 100;
+	}
+
+	public boolean slobodnih() {
+		for (int i = 0; i < mesta.length; i++) {
+			if (mesta[i].getIndikator()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int prosecnaStarost() {
+		int br = 0;
+		double broj = 0;
+		for (int i = 0; i < mesta.length; i++) {
+			if (!mesta[i].getIndikator()) {
+				br++;
+				broj += mesta[i].getStarost();
+			}
+		}
+		return (int) (broj / br);
+	}
+
+	public double najvecaStarost() {
+		double broj = mesta[0].getStarost();
+		for (int i = 1; i < mesta.length; i++) {
+			if (!mesta[i].getIndikator() && mesta[i].getStarost() > broj) {
+				broj = mesta[i].getStarost();
+			}
+		}
+		return broj;
+	}
+
+	public double najmanjaStarost() {
+		double broj = mesta[0].getStarost();
+		for (int i = 1; i < mesta.length; i++) {
+			if (!mesta[i].getIndikator() && mesta[i].getStarost() < broj) {
+				broj = mesta[i].getStarost();
+			}
+		}
+		return broj;
+	}
+
+	public void ispis() {
+		for (int i = 0; i < mesta.length; i++) {
+			System.out.println(mesta[i].toString());
+		}
+	}
+
+	public void ispisJovanovic() {
+		System.out.println("Jovanovic:");
+		for (int i = 0; i < mesta.length; i++) {
+			if (!mesta[i].getIndikator()) {
+				String[] test = mesta[i].getImePrezime().split(" ");
+				for (int j = 0; j < test.length; j++) {
+					if (test[j].equals("Jovanovic")) {
+						System.out.println(mesta[i].toString());
+						break;
+					}
+				}
+			}
+		}
+	}
+}

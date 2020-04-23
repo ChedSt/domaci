@@ -1,0 +1,14 @@
+package zadatak7;
+
+public class TestZaposleni {
+
+	public static void main(String[] args) {
+		KancelarijskiRadnik kancelarijskiRadnik = new KancelarijskiRadnik();
+		Menadzer menadzer = new Menadzer();
+		kancelarijskiRadnik.izracunajPlatu(200);
+		menadzer.izracunajPlatu(250);
+		System.out.println("Plata kancelarijskog radnika: " + kancelarijskiRadnik.getPlata());
+		System.out.println("Plata menadzera: " + menadzer.getPlata());
+	}
+	
+}

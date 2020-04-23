@@ -1,0 +1,69 @@
+package zadatak29;
+
+public class Avion {
+	private boolean[] nizEkonomske;
+	private boolean[] nizPoslovne;
+
+	public Avion(int brojEkonomske, int brojPoslovne) {
+		if (brojEkonomske >= 0 && brojPoslovne >= 0) {
+			nizEkonomske = new boolean[brojEkonomske];
+			nizPoslovne = new boolean[brojPoslovne];
+		} else {
+			nizEkonomske = new boolean[120];
+			nizPoslovne = new boolean[60];
+		}
+
+		for (int i = 0; i < nizPoslovne.length; i++) {
+			nizPoslovne[i] = true;
+		}
+		for (int i = 0; i < nizEkonomske.length; i++) {
+			nizEkonomske[i] = true;
+		}
+	}
+
+	public void uvodjenje(boolean poslovna, int brojSedista) {
+		if (poslovna && brojSedista < nizPoslovne.length) {
+			nizPoslovne[brojSedista] = false;
+			return;
+		} else {
+			if (brojSedista < nizEkonomske.length) {
+				nizEkonomske[brojSedista] = false;
+				return;
+			}
+		}
+		System.out.println("Greska: Mesto nije slobodno ili ne postoji");
+	}
+
+	public void izvestaj() {
+		int brojE = 0, brojP = 0;
+		for (int i = 0; i < nizEkonomske.length; i++) {
+			if (nizEkonomske[i] = false) {
+				brojE++;
+			}
+		}
+		for (int i = 0; i < nizPoslovne.length; i++) {
+			if (nizPoslovne[i] = false) {
+				brojP++;
+			}
+		}
+		System.out.println("Zauzetost ekonomske klase iznosi: " + (double)(brojE / nizEkonomske.length * 100) + "%");
+		System.out.println("Zauzetost poslovne klase iznosi: " + (double)(brojP / nizPoslovne.length * 100) + "%");
+		System.out.println("Ukupna zarada iznosi: " + (brojE * 250 + brojP * 500));
+	}
+	
+	public boolean provera() {
+		int broj = 0;
+		for (int i = 0; i < nizEkonomske.length; i++) {
+			if (nizEkonomske[i]) {
+				broj++;
+			}
+			if (broj == 3) {
+				return true;
+			}
+			if (i % 6 == 5) {
+				broj = 0;
+			}
+		}
+		return false;
+	}
+}

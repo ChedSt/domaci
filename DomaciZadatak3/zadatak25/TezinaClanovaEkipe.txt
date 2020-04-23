@@ -1,0 +1,73 @@
+package zadatak25;
+
+public class TezinaClanovaEkipe {
+	private double[] niz;
+	private int brojClanova = 0;
+	private TipEkipe kategorija;
+
+	public TezinaClanovaEkipe(int brojClanova, char oznaka) {
+		kategorija = new TipEkipe();
+		this.kategorija.oznaka = oznaka;
+		if (brojClanova > 0) {
+			niz = new double[brojClanova];
+		} else {
+			niz = new double[20];
+		}
+	}
+
+	public void ispis() {
+		int brN = 0, brI = 0;
+		double prosek = 0;
+
+		for (int i = 0; i < niz.length; i++) {
+			prosek += niz[i];
+		}
+
+		prosek /= niz.length;
+
+		for (int i = 0; i < niz.length; i++) {
+			if (niz[i] > prosek) {
+				brN++;
+			} else {
+				brI++;
+			}
+		}
+
+		System.out.println("Igraca cija je visina iznad proseka ima: " + brN);
+		System.out.println("Igraca cija je visina ispod proseka ima: " + brI);
+	}
+
+	public void dodavanje(double tezina) {
+		if (brojClanova == niz.length) {
+			return;
+		}
+		switch (kategorija.oznaka) {
+		case 'L':
+			if (tezina >= 45 && tezina < 65) {
+				niz[brojClanova++] = tezina;
+			}
+			return;
+		case 'S':
+			if (tezina >= 65 && tezina < 85) {
+				niz[brojClanova++] = tezina;
+			}
+			return;
+		case 'T':
+			if (tezina >= 85) {
+				niz[brojClanova++] = tezina;
+			}
+			return;
+		}
+	}
+	
+	public static boolean isteTezine(double[] niz1, double[] niz2) {
+		for (int i = 0; i < niz1.length; i++) {
+			for (int j = 0; j < niz2.length; j++) {
+				if (niz1[i] == niz2[j]) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}

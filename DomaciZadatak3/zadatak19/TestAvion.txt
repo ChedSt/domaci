@@ -1,0 +1,15 @@
+package zadatak19;
+
+public class TestAvion {
+
+	public static void main(String[] args) {
+		Avion avion = new Avion();
+		avion.uvediPutnika(21, "Jovan Jovanovic", 53);
+		avion.uvediPutnika(31, "Milos Milosevic", 23);
+		avion.uvediPutnika(41, "Ana Jovanovic", 22);
+		avion.ispis();
+		avion.ispisJovanovic();
+		System.out.println("Prosecna starost: " + avion.prosecnaStarost());
+	}
+	
+}

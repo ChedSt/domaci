@@ -1,0 +1,14 @@
+package zadatak14;
+
+public class TestAutomatNovca {
+	
+	public static void main(String[] args) {
+		AutomatNovca automatNovca = new AutomatNovca();
+		automatNovca.uloziNovac(3000);
+		NapredniAutomatNovca napredniAutomatNovca = new NapredniAutomatNovca();
+		napredniAutomatNovca.podigniNovac(9999);
+		automatNovca.ispisi();
+		napredniAutomatNovca.ispisi();
+	}
+	
+}

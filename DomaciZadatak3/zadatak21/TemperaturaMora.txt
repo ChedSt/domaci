@@ -1,0 +1,45 @@
+package zadatak21;
+
+public class TemperaturaMora {
+	private double[] nizMerenja = new double[365];
+	static final int KRITICNA_TEMPERATURA = 45;
+	
+	public void unos(double temperatura, int redniBroj) {
+		if (temperatura >= 0 && (redniBroj >= 1 && redniBroj <= 365)) {
+			nizMerenja[redniBroj - 1] = temperatura;
+		} else {
+			System.out.println("Greska: Temperatura ili redni broj nisu ispravni");
+		}
+	}
+	
+	public void prosekJun() {
+		double broj = 0;
+		int limit = 31 + 28 + 31 + 30 + 31;
+		for (int i = limit; i < limit + 31; i++) {
+			broj += nizMerenja[i];
+		}
+		System.out.println("Prosecna temperatura u junu je: " + (broj / 31));
+	}
+	
+	public void kopijaNiza(double[] niz) {
+		for (int i = 0; i < 365; i++) {
+			nizMerenja[i] = niz[365 - i - 1];
+		}
+	}
+	
+	public boolean provera() {
+		int broj = 0;
+		for (int i = 0; i < 365; i++) {
+			if (nizMerenja[i] > KRITICNA_TEMPERATURA) {
+				broj++;
+			} else {
+				broj = 0;
+			}
+			if (broj == 5) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+}

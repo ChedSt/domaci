@@ -1,0 +1,19 @@
+package zadatak16;
+
+public class TestDNKLanac {
+
+	public static void main(String[] args) {
+		DNKLanac dnkLanac = new DNKLanac(8);
+		dnkLanac.dodavanje('A');
+		dnkLanac.dodavanje('C');
+		dnkLanac.dodavanje('C');
+		dnkLanac.dodavanje('G');
+		dnkLanac.dodavanje('T');
+		dnkLanac.dodavanje('T');
+		dnkLanac.dodavanje('T');
+		dnkLanac.dodavanje('T');
+		dnkLanac.ispisUJednomRedu();
+		dnkLanac.ispisObrnuto();
+	}
+	
+}

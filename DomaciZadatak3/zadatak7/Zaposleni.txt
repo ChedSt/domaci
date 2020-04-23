@@ -1,0 +1,11 @@
+package zadatak7;
+
+public abstract class Zaposleni {
+	protected double plata;
+
+	public double getPlata() {
+		return plata;
+	}
+	
+	public abstract void izracunajPlatu(int brojSati);
+}

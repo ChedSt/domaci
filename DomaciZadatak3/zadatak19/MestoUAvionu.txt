@@ -1,0 +1,31 @@
+package zadatak19;
+
+public class MestoUAvionu {
+	private boolean indikator = true;
+	private String imePrezime = null;
+	private int starost = 0;
+	public boolean getIndikator() {
+		return indikator;
+	}
+	public void setIndikator(boolean indikator) {
+		this.indikator = indikator;
+	}
+	public String getImePrezime() {
+		return imePrezime;
+	}
+	public void setImePrezime(String imePrezime) {
+		this.imePrezime = imePrezime;
+	}
+	public int getStarost() {
+		return starost;
+	}
+	public void setStarost(int starost) {
+		this.starost = starost;
+	}
+	@Override
+	public String toString() {
+		return indikator ? "Slobodno" : "Ime i prezime: " + imePrezime + ", starost: " + starost;
+	}
+	
+	
+}

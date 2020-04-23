@@ -1,0 +1,14 @@
+package zadatak12;
+
+public class TestMuzickiStub {
+
+	public static void main(String[] args) {
+		MuzickiStub muzickiStub = new MuzickiStub();
+		muzickiStub.ukljuci();
+		muzickiStub.pojacajTon();
+		muzickiStub.pojacajTon();
+		muzickiStub.promeniStanicu(88.9);
+		muzickiStub.ispisi();
+	}
+	
+}

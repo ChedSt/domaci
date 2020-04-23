@@ -1,0 +1,24 @@
+package zadatak12;
+
+public abstract class MuzickiUredjaj {
+	protected boolean ukljucen;
+	protected int jacinaTona = 0;
+	
+	public void ukljuci() {
+		ukljucen = true;
+	}
+	public void iskljuci() {
+		ukljucen = false;
+	}
+	public void pojacajTon() {
+		if (jacinaTona < 40) {
+			jacinaTona++;
+		}
+	}
+	public void smanjiTon() {
+		if (jacinaTona > 0) {
+			jacinaTona--;
+		}
+	}
+	public abstract void ispisi();
+}
